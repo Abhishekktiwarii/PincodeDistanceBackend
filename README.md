@@ -361,6 +361,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 If this project helped you, give it a star! ⭐
 
 ---
-**Built with ❤️ by [Your Name]**  
-*Part of Backend Engineering Assignment*  
+**Built with ❤️ by Abhishek Tiwari
+*Software Developer || Java Developer*  
 *"Turning pincodes into pathways, one API call at a time"* 🗺️
