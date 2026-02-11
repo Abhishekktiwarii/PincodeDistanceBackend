@@ -7,7 +7,7 @@ A blazing-fast, production-ready REST API that calculates distance and travel du
 ![License](https://img.shields.io/badge/license-MIT-blue)
 ![Build](https://img.shields.io/badge/build-passing-success)
 
-## ✨ **Sexy Features That Make This API Hot**
+## ✨ ** Features That Make This API Hot**
 
 | Feature | 🔥 Why It's Awesome |
 |---------|-------------------|
