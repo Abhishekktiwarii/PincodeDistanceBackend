@@ -33,12 +33,24 @@ public class GoogleMapsService {
     private String apiUrl;
 
     @Cacheable(value = "pincodeDistances", key = "#fromPincode + '-' + #toPincode")
-    public DistanceResponse getDistance(String fromPincode, String toPincode) {
-        log.info("Fetching distance from {} to {}", fromPincode, toPincode);
+    public DistanceResponse getDistanceCached(String fromPincode, String toPincode) {
 
         return repository.findByFromPincodeAndToPincode(fromPincode, toPincode)
                 .map(entity -> mapToDistanceResponse(entity, "DATABASE"))
                 .orElseGet(() -> fetchFromGoogleMaps(fromPincode, toPincode));
+    }
+
+    public DistanceResponse getDistance(String fromPincode, String toPincode) {
+
+        DistanceResponse response = getDistanceCached(fromPincode, toPincode);
+
+        // If returned from cache, mark it
+        if (!"OPENROUTE".equals(response.getSource()) &&
+                !"FALLBACK".equals(response.getSource())) {
+            response.setSource("CACHE");
+        }
+
+        return response;
     }
 
 

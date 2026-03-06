@@ -31,7 +31,6 @@ public class PincodeDistance {
 
     private Double distanceInMeters;
     private Double distanceInKm;
-
     private Long durationInSeconds;
     private String durationText;
 
